@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('frontend App', () => {
+describe('dws-web-client App', () => {
   let page: AppPage;
 
   beforeEach(() => {
