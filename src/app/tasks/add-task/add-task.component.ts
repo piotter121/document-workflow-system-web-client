@@ -60,7 +60,9 @@ export class AddTaskComponent implements OnInit, RouteComponent {
     };
     this.tasksService.createTask(newTask, this.projectId)
       .subscribe(
-        (taskId: string) => this.router.navigate(['../', taskId]),
+        (taskId: string) => this.router.navigate(['../', taskId], {
+          relativeTo: this.route
+        }),
         () => this.toastNotification.error('dws.task.add.failure')
       );
   }
