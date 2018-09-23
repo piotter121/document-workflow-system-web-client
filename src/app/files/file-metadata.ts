@@ -10,7 +10,7 @@ export interface FileMetadata {
   markedToConfirm: boolean;
   creationDate: Date;
   modificationDate: Date;
-  versions: VersionInfo[];
+  versions?: VersionInfo[];
   extension: string;
   latestVersion: VersionSummary;
   numberOfVersions: number;
