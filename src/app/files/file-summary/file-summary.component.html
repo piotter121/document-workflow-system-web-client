@@ -1,7 +1,7 @@
 <div class="card bg-light">
   <h5 class="card-header">
     <img src="/assets/images/{{file.extension}}.png" height="25">
-    <a [routerLink]="['files', file.id]" class="mx-1">{{file.name}}</a>
+    <a [routerLink]="['files', file.id]" class="mx-1">{{file.name + '.' + file.extension}}</a>
     <span *ngIf="file.markedToConfirm" class="badge badge-primary text-uppercase" translate>
       dws.files.summary.markedToConfirm
     </span>

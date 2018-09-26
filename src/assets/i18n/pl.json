@@ -49,7 +49,7 @@
       },
       "summary": {
         "creationDate": "Utworzono {{creationDate}}",
-        "lastModifiedFile": "Ostatnio zmodyfikowany plik {{name}} w dniu {{saveDate}} przez {{author}} w zadaniu {{taskName}}"
+        "lastModifiedFile": "Ostatnio zmodyfikowany plik \"{{name}}\" w dniu {{saveDate}} przez {{author}} w zadaniu \"{{taskName}}\""
       },
       "add": {
         "createButton": "Utwórz",
