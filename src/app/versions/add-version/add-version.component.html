@@ -9,7 +9,7 @@
 
           <div class="col-5">
             <input id="file" type="file" class="form-control-file" required
-                   (change)="fileToUpload = $event.target.files.item(0)">
+                   (change)="fileToUpload = $event.target.files.item(0)" [accept]="acceptedFileTypes | async">
           </div>
         </div>
 
@@ -38,7 +38,7 @@
         <div class="form-group row">
           <div class="offset-2 col-5">
             <button type="submit" class="btn btn-primary"
-                    [disabled]="newVersionOfFile.invalid || newVersionOfFile.pending" translate>
+                    [disabled]="newVersionOfFile.invalid || newVersionOfFile.pending || !fileToUpload" translate>
               dws.versions.add.saveButton
             </button>
           </div>

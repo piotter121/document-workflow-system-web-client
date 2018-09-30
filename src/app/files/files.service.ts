@@ -31,4 +31,14 @@ export class FilesService {
   deleteFile(projectId: string, taskId: string, fileId: string): Observable<null> {
     return this.http.delete<null>(`/api/projects/${projectId}/tasks/${taskId}/files/${fileId}`);
   }
+
+  getFileExtension(projectId: string, taskId: string, fileId: string): Promise<ContentType> {
+    return this.http.get<ContentType>(`/api/projects/${projectId}/tasks/${taskId}/files/${fileId}/contentType`)
+      .toPromise();
+  }
+}
+
+export interface ContentType {
+  mimeType: string;
+  extension: string;
 }
