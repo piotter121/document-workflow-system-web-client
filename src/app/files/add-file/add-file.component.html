@@ -24,7 +24,7 @@
           <label class="col-md-2 col-form-label" for="file" translate>dws.files.add.labels.file</label>
           <div class="col-md-5">
             <input id="file" type="file" class="form-control-file"
-                   (change)="fileToUpload = $event.target.files.item(0)" required>
+                   (change)="fileToUpload = $event.target.files.item(0)" [accept]="acceptedFileTypes" required>
           </div>
         </div>
 

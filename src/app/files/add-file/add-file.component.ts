@@ -15,6 +15,8 @@ export class AddFileComponent implements OnInit, RouteComponent {
   newFile: FormGroup;
   fileToUpload: File;
 
+  acceptedFileTypes = SUPPORTED_FILE_EXTENSIONS.concat(SUPPORTED_FILE_MIME_TYPES);
+
   constructor(private formBuilder: FormBuilder,
               private filesService: FilesService,
               public route: ActivatedRoute,
@@ -58,3 +60,13 @@ export class AddFileComponent implements OnInit, RouteComponent {
       );
   }
 }
+
+const SUPPORTED_FILE_EXTENSIONS: string[] = [
+  '.xlsx', '.xls', '.ods', '.odt', '.doc', '.docx'
+];
+
+const SUPPORTED_FILE_MIME_TYPES: string[] = [
+  'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'application/vnd.oasis.opendocument.text', 'application/vnd.oasis.opendocument.spreadsheet'
+];
