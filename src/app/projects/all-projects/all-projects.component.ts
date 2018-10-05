@@ -12,6 +12,7 @@ import {RouteComponent} from "../../shared/route-component";
 })
 export class AllProjectsComponent implements OnInit, RouteComponent {
   projects: ProjectSummary[] = [];
+  isLoading: boolean;
 
   constructor(private projectsService: ProjectsService,
               public route: ActivatedRoute,
@@ -19,12 +20,10 @@ export class AllProjectsComponent implements OnInit, RouteComponent {
   }
 
   ngOnInit() {
-    this.loadProjects();
-  }
-
-  private loadProjects(): void {
+    this.isLoading = true;
     this.projectsService.getAllUserProjects()
-      .subscribe((projects: ProjectSummary[]) => this.projects = projects,
-        () => this.toastNotification.error('dws.project.all.failure'));
+      .then(projects => this.projects = projects,
+        () => this.toastNotification.error('dws.project.all.failure'))
+      .then(() => this.isLoading = false);
   }
 }

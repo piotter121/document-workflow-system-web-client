@@ -45,7 +45,8 @@
         "createNew": "Stwórz nowy projekt",
         "header": "Projekty w których uczestniczysz",
         "noProjectsMsg": "<strong>Brak projektów do wyświetlania.</strong> Utwórz nowy projekt, lub poproś o dodanie do istniejącego, aby rozpocząć pracę.",
-        "failure": "Nie udało się pobrać projektów"
+        "failure": "Nie udało się pobrać projektów",
+        "loading": "Ładowanie, proszę czekać..."
       },
       "summary": {
         "creationDate": "Utworzono {{creationDate}}",

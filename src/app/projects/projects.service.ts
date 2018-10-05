@@ -9,8 +9,8 @@ import {ProjectInfo} from "./project-info";
 export class ProjectsService {
   constructor(private http: HttpClient) {}
 
-  getAllUserProjects(): Observable<ProjectSummary[]> {
-    return this.http.get<ProjectSummary[]>('/api/projects');
+  getAllUserProjects(): Promise<ProjectSummary[]> {
+    return this.http.get<ProjectSummary[]>('/api/projects').toPromise();
   }
 
   createProject(project: NewProject): Observable<string> {
