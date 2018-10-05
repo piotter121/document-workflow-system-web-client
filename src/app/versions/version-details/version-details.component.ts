@@ -7,11 +7,13 @@ import {DiffData, VersionsService} from '../versions.service';
 import {DifferenceType} from '../difference-type.enum';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {RouteComponent} from "../../shared/route-component";
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'version-details',
   templateUrl: './version-details.component.html',
-  styleUrls: ['./version-details.component.css']
+  styleUrls: ['./version-details.component.css'],
+  animations: [easeInEaseOutAnimation]
 })
 export class VersionDetailsComponent implements OnInit, RouteComponent {
 

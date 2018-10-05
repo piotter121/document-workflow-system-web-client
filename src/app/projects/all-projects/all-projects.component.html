@@ -12,10 +12,7 @@
 
 <div class="row">
   <div class="offset-2 col-8" *ngIf="isLoading; else notLoading">
-    <!--suppress HtmlUnknownAttribute -->
-    <ngb-progressbar type="success" animated="true" value="100" max="100" striped="true" height="2em">
-      {{'dws.project.all.loading' | translate}}
-    </ngb-progressbar>
+    <loading-spinner></loading-spinner>
   </div>
 
   <ng-template #notLoading>
@@ -27,7 +24,7 @@
           <h3 translate>dws.project.all.header</h3>
         </div>
         <div class="row">
-          <div *ngFor="let project of projects; trackBy: project?.id" class="col-md-4">
+          <div @easeInEaseOut *ngFor="let project of projects; trackBy: project?.id" class="col-md-4">
             <project-summary [project]="project"></project-summary>
           </div>
         </div>
@@ -35,7 +32,7 @@
     </ng-template>
 
     <ng-template #showMsgBlock>
-      <div class="col-md-8 offset-md-2">
+      <div @easeInEaseOut class="col-md-8 offset-md-2">
         <div class="alert alert-info text-center"
              [innerHTML]="'dws.project.all.noProjectsMsg' | translate"></div>
       </div>

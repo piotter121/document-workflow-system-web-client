@@ -6,6 +6,7 @@ import {InvalidFeedbackComponent} from './invalid-feedback/invalid-feedback.comp
 import {AppValidatorsService} from './app-validators.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToastNotificationService} from './toast-notification.service';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {ToastNotificationService} from './toast-notification.service';
   ],
   declarations: [
     InvalidFeedbackComponent,
+    LoadingSpinnerComponent,
   ],
   providers: [
     AppValidatorsService,
@@ -25,7 +27,8 @@ import {ToastNotificationService} from './toast-notification.service';
     ReactiveFormsModule,
     TranslateModule,
     NgbModule,
-    InvalidFeedbackComponent
+    InvalidFeedbackComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule {

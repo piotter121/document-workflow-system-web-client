@@ -1,6 +1,6 @@
-<div class="row" *ngIf="(file$ | async) as file">
+<div @easeInEaseOut class="row" *ngIf="(file$ | async) as file; else loadingSpinner">
   <div class="col-md-8">
-    <div class="btn-toolbar mb-2" role="toolbar"
+    <div class="btn-toolbar mb-2" role="toolbar" @easeInEaseOut
          *ngIf="(isCurrentUserTaskAdministrator$  | async) as isCurrentUserTaskAdministrator">
       <div *ngIf="!file.confirmed" class="btn-group mr-2" role="group">
         <button *ngIf="!isCurrentUserTaskAdministrator && !file.markedToConfirm" class="btn btn-success"
@@ -118,3 +118,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #loadingSpinner>
+  <loading-spinner></loading-spinner>
+</ng-template>

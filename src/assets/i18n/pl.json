@@ -29,7 +29,7 @@
         },
         "noTasksAlert": "<strong>Projekt nie posiada jeszcze żadnych zadań!</strong> Dodaj nowe zadanie, aby rozpocząć pracę",
         "taskList": {
-          "header": "Zadanie w projekcie {{name}}"
+          "header": "Zadania w projekcie {{name}}"
         },
         "card": {
           "header": "Szczegóły projektu",

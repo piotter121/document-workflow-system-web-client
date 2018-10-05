@@ -12,11 +12,13 @@ import {ToastNotificationService} from '../../shared/toast-notification.service'
 import {VersionsService} from '../../versions/versions.service';
 import {DifferenceType} from '../../versions/difference-type.enum';
 import {RouteComponent} from "../../shared/route-component";
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'file-details',
   templateUrl: './file-details.component.html',
-  styleUrls: ['./file-details.component.css']
+  styleUrls: ['./file-details.component.css'],
+  animations: [easeInEaseOutAnimation]
 })
 export class FileDetailsComponent implements OnInit, RouteComponent {
 

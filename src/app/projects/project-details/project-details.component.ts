@@ -1,25 +1,27 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProjectsService} from '../projects.service';
-import {catchError, map, switchMap} from 'rxjs/operators';
+import {catchError, switchMap} from 'rxjs/operators';
 import {Observable, throwError} from 'rxjs';
 import {ProjectInfo} from '../project-info';
 import {UserService} from '../../auth/user.service';
 import {UserInfo} from '../../auth/user-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {RouteComponent} from "../../shared/route-component";
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'project-details',
   templateUrl: './project-details.component.html',
-  styleUrls: ['./project-details.component.css']
+  styleUrls: ['./project-details.component.css'],
+  animations: [
+    easeInEaseOutAnimation
+  ]
 })
 export class ProjectDetailsComponent implements OnInit, RouteComponent {
 
   project$: Observable<ProjectInfo>;
   currentUser: UserInfo;
-  isProjectAdmin$: Observable<boolean>;
-  hasTasks$: Observable<boolean>;
 
   constructor(public route: ActivatedRoute,
               private router: Router,
@@ -39,8 +41,10 @@ export class ProjectDetailsComponent implements OnInit, RouteComponent {
         return throwError(err);
       })
     );
-    this.isProjectAdmin$ = this.project$.pipe(map(project => this.currentUser.equals(project.administrator)));
-    this.hasTasks$ = this.project$.pipe(map(project => project.tasks.length > 0));
+  }
+
+  isCurrentUserProjectAdmin(projectAdmin: UserInfo): boolean {
+    return this.currentUser.equals(projectAdmin);
   }
 
   deleteProject(project: ProjectInfo) {

@@ -19,7 +19,7 @@ const versionsRoutes: Routes = [
   },
   {
     path: pathBase,
-    redirectTo: 'projects/:projectId/tasks/:taskId'
+    redirectTo: 'projects/:projectId/tasks/:taskId/files/:fileId'
   }
 ];
 

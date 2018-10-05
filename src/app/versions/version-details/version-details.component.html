@@ -1,16 +1,17 @@
-<div class="row" *ngIf="(version$ | async) as version; else loading">
+<div @easeInEaseOut class="row" *ngIf="(version$ | async) as version; else loading">
   <div class="col-12 text-center">
     <h3 translate [translateParams]="version">dws.versions.heading</h3>
     <blockquote class="blockquote">
       <p>{{version.message}}</p>
-      <footer class="blockquote-footer" translate [translateParams]="{'fullName': version.author.fullName, 'date': (version.saveDate | date:'dd.MM.yyyy HH:mm')}">
+      <footer class="blockquote-footer" translate
+              [translateParams]="{'fullName': version.author.fullName, 'date': (version.saveDate | date:'dd.MM.yyyy HH:mm')}">
         dws.versions.quoteFooter
       </footer>
     </blockquote>
   </div>
 
   <div class="col-12">
-    <div *ngIf="(diffData$ | async) as diffData; else loading" class="row">
+    <div @easeInEaseOut *ngIf="(diffData$ | async) as diffData; else loading" class="row">
       <div *ngIf="version.previousVersionString" class="col-6">
         <div class="card bg-light">
           <div class="card-header">
@@ -59,7 +60,5 @@
 </div>
 
 <ng-template #loading>
-  <div class="alert alert-info">
-    <p translate>dws.versions.loading</p>
-  </div>
+  <loading-spinner></loading-spinner>
 </ng-template>

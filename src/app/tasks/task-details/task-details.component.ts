@@ -8,11 +8,13 @@ import {UserService} from '../../auth/user.service';
 import {UserInfo} from '../../auth/user-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {RouteComponent} from "../../shared/route-component";
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'task-details',
   templateUrl: './task-details.component.html',
-  styleUrls: ['./task-details.component.css']
+  styleUrls: ['./task-details.component.css'],
+  animations: [easeInEaseOutAnimation]
 })
 export class TaskDetailsComponent implements OnInit, RouteComponent {
   task$: Observable<TaskInfo>;

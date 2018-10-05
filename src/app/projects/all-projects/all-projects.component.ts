@@ -4,11 +4,15 @@ import {ProjectsService} from '../projects.service';
 import {ActivatedRoute} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {RouteComponent} from "../../shared/route-component";
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'all-projects',
   templateUrl: './all-projects.component.html',
-  styleUrls: ['./all-projects.component.css']
+  styleUrls: ['./all-projects.component.css'],
+  animations: [
+    easeInEaseOutAnimation
+  ]
 })
 export class AllProjectsComponent implements OnInit, RouteComponent {
   projects: ProjectSummary[] = [];
