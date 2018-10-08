@@ -4,6 +4,7 @@
     "httpErrors": {
       "AccessDeniedException": "Dostęp do wybranego zasobu jest zabroniony",
       "UserNotFoundException": "Nie znaleziono użytkownika z adresem email '{{email}}'",
+      "UnsupportedContentType": "Nieobsługiwany format pliku: {{unsupportedContentTypeName}}",
       "InternalServerError": "Błąd wewnętrzny serwera",
       "BadRequest": {
         "field": {

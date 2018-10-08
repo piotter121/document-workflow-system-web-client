@@ -4,6 +4,6 @@ import {RestErrorHandlerService} from './rest-error-handler.service';
 
 /** Http interceptor providers in outside-in order */
 export const httpInterceptorProviders = [
-  {provide: HTTP_INTERCEPTORS, useClass: RestApiInterceptor, multi: true},
-  {provide: HTTP_INTERCEPTORS, useClass: RestErrorHandlerService, multi: true}
+  {provide: HTTP_INTERCEPTORS, useClass: RestErrorHandlerService, multi: true},
+  {provide: HTTP_INTERCEPTORS, useClass: RestApiInterceptor, multi: true}
 ];
