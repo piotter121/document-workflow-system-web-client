@@ -32,12 +32,14 @@ export class RestErrorHandlerService implements HttpInterceptor {
 
   private handleBadRequestResponse(errorResponse: HttpErrorResponse) {
     const validationError: ValidationError = errorResponse.error;
-    validationError.fieldErrors.forEach((fieldError: FieldError) => {
-      const fieldTranslationCode = `dws.httpErrors.BadRequest.field.${fieldError.field}`;
-      const messageTranslationCode = `dws.httpErrors.BadRequest.message.${fieldError.message}`;
-      this.translate.get([fieldTranslationCode, messageTranslationCode])
-        .subscribe(translation => this.toastr.error(translation[messageTranslationCode], translation[fieldTranslationCode]));
-    });
+    if (validationError && validationError.fieldErrors) {
+      validationError.fieldErrors.forEach((fieldError: FieldError) => {
+        const fieldTranslationCode = `dws.httpErrors.BadRequest.field.${fieldError.field}`;
+        const messageTranslationCode = `dws.httpErrors.BadRequest.message.${fieldError.message}`;
+        this.translate.get([fieldTranslationCode, messageTranslationCode])
+          .subscribe(translation => this.toastr.error(translation[messageTranslationCode], translation[fieldTranslationCode]));
+      });
+    }
   }
 
   private defaultHandle(errorResponse: HttpErrorResponse) {
