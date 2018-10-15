@@ -8,9 +8,13 @@ import {AuthRoutingModule} from "./auth-routing.module";
 import {UserService} from "./user.service";
 import {SharedModule} from "../shared/shared.module";
 
+export function getToken() {
+  return localStorage.getItem('token');
+}
+
 export const jwtOptions: JwtModuleOptions = {
   config: {
-    tokenGetter: () => localStorage.getItem('token'),
+    tokenGetter: getToken,
     headerName: 'X-AUTH-TOKEN',
     skipWhenExpired: true,
     authScheme: ''

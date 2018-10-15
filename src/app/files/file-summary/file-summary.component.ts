@@ -26,7 +26,7 @@ export class FileSummaryComponent implements OnInit {
     }
   }
 
-  private hasOneVersion() {
+  hasOneVersion() {
     return this.file.creationDate === this.file.latestVersion.saveDate;
   }
 }
