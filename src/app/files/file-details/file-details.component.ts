@@ -10,7 +10,6 @@ import {Observable, throwError} from 'rxjs';
 import {VersionInfo} from '../../versions/version-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {VersionsService} from '../../versions/versions.service';
-import {DifferenceType} from '../../versions/difference-type.enum';
 import {RouteComponent} from "../../shared/route-component";
 import {easeInEaseOutAnimation} from "../../animations";
 
@@ -116,29 +115,4 @@ export class FileDetailsComponent implements OnInit, RouteComponent {
     this.versionsService.downloadVersion(this.projectId, this.taskId, file, version);
   }
 
-  // noinspection JSMethodCanBeStatic
-  numberOfDifferences(version: VersionInfo): number {
-    return version.differences.length || 0;
-  }
-
-  numberOfModifiedLines(version: VersionInfo): number {
-    return version.differences
-      .filter(difference => difference.differenceType === DifferenceType.Modification)
-      .map(difference => difference.newSectionSize)
-      .reduce((a, b) => a + b, 0);
-  }
-
-  numberOfInsertedLines(version: VersionInfo): number {
-    return version.differences
-      .filter(difference => difference.differenceType === DifferenceType.Insert)
-      .map(difference => difference.newSectionSize)
-      .reduce((a, b) => a + b, 0);
-  }
-
-  numberOfDeletedLines(version: VersionInfo): number {
-    return version.differences
-      .filter(difference => difference.differenceType === DifferenceType.Delete)
-      .map(difference => difference.previousSectionSize)
-      .reduce((a, b) => a + b, 0);
-  }
 }

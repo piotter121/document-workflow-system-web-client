@@ -5,6 +5,9 @@ import {FilesRoutingModule} from './files-routing.module';
 import {AddFileComponent} from './add-file/add-file.component';
 import {FilesService} from './files.service';
 import {FileDetailsComponent} from './file-details/file-details.component';
+import {NumberOfModifiedLinesPipe} from './number-of-modified-lines.pipe';
+import {NumberOfInsertedLinesPipe} from './number-of-inserted-lines.pipe';
+import {NumberOfDeletedLinesPipe} from './number-of-deleted-lines.pipe';
 
 @NgModule({
   imports: [
@@ -14,7 +17,10 @@ import {FileDetailsComponent} from './file-details/file-details.component';
   declarations: [
     FileSummaryComponent,
     AddFileComponent,
-    FileDetailsComponent
+    FileDetailsComponent,
+    NumberOfModifiedLinesPipe,
+    NumberOfInsertedLinesPipe,
+    NumberOfDeletedLinesPipe
   ],
   providers: [
     FilesService

@@ -30,12 +30,12 @@
     </div>
 
     <div id="versions" class="list-group">
-      <div *ngFor="let version of file.versions; trackBy: version?.saveDate" class="list-group-item">
+      <div *ngFor="let version of file.versions; trackBy: version?.saveDate; first as isFirst" class="list-group-item">
         <div class="d-flex align-items-center mb-2">
           <span class="badge badge-secondary badge-pill mr-1" translate [translateParams]="version">
             dws.files.details.versionList.listItem.versionString
           </span>
-          <span *ngIf="version.saveDate === file.modificationDate" class="badge badge-secondary badge-pill" translate>
+          <span *ngIf="isFirst" class="badge badge-secondary badge-pill" translate>
             dws.files.details.versionList.listItem.newestVersion
           </span>
         </div>
@@ -44,16 +44,16 @@
           <div class="col-md-5">
             <dl class="row">
               <dt class="col-8" translate>dws.files.details.versionList.listItem.counters.numberOfChanges</dt>
-              <dd class="col-4">{{numberOfDifferences(version)}}</dd>
+              <dd class="col-4">{{version.differences.length || 0}}</dd>
 
               <dt class="col-8" translate>dws.files.details.versionList.listItem.counters.numberOfModifiedLines</dt>
-              <dd class="col-4">{{numberOfModifiedLines(version)}}</dd>
+              <dd class="col-4">{{version | numberOfModifiedLines}}</dd>
 
               <dt class="col-8" translate>dws.files.details.versionList.listItem.counters.numberOfInsertedLines</dt>
-              <dd class="col-4">{{numberOfInsertedLines(version)}}</dd>
+              <dd class="col-4">{{version | numberOfInsertedLines}}</dd>
 
               <dt class="col-8" translate>dws.files.details.versionList.listItem.counters.numberOfDeleteLines</dt>
-              <dd class="col-4">{{numberOfDeletedLines(version)}}</dd>
+              <dd class="col-4">{{version | numberOfDeletedLines}}</dd>
             </dl>
           </div>
 
