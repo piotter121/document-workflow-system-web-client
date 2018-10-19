@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {AddTaskComponent} from "./add-task/add-task.component";
 import {AuthGuardService} from "../auth/auth-guard.service";
 import {TaskDetailsComponent} from "./task-details/task-details.component";
+import {SearchResultsComponent} from "../search/search-results/search-results.component";
 
 const tasksRoutes: Routes = [
   {
@@ -13,6 +14,11 @@ const tasksRoutes: Routes = [
   {
     path: 'projects/:projectId/tasks/:taskId',
     component: TaskDetailsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'projects/:projectId/tasks/:taskId/search',
+    component: SearchResultsComponent,
     canActivate: [AuthGuardService]
   },
   {

@@ -1,0 +1,35 @@
+<div *ngIf="searchResults$ | async as searchResults; else loadingSpinner" @easeInEaseOut class="row">
+  <div class="col-8 offset-2" *ngIf="searchResults?.length > 0; else noResults">
+    <div class="d-flex justify-content-center" *ngIf="phrase$ | async as phrase">
+      <h3 [translate] [translateParams]="{'phrase': phrase}">dws.search.searchResults.resultsHeader</h3>
+    </div>
+
+    <div class="list-group">
+      <ng-template ngFor let-entry [ngForOf]="searchResults" [ngForTrackBy]="entry?.fileId">
+        <a [routerLink]="['/projects', projectId, 'tasks', entry.taskId, 'files', entry.fileId]"
+           class="list-group-item list-group-item-primary list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 align-items-start justify-content-between">
+            <h5><b>{{entry.taskName}}</b>: "{{entry.fileName}}"</h5>
+            <small class="badge badge-primary" translate [translateParams]="{'versionString': entry.versionString}">
+              dws.search.searchResults.versionString
+            </small>
+          </div>
+          <small class="mb-1 w-100 d-block" *ngFor="let highlight of entry.highlightContent"
+                 [innerHtml]="highlight"></small>
+        </a>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <div class="col-8 offset-2">
+      <div class="alert alert-warning text-center" role="alert">
+        {{'dws.search.searchResults.noResults' | translate}}
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #loadingSpinner>
+  <loading-spinner></loading-spinner>
+</ng-template>

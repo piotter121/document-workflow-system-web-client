@@ -248,6 +248,17 @@
       "homePageLink": "Strona główna",
       "goBack": "Powrót"
     },
+    "search": {
+      "searchInput": {
+        "inputPlaceholder": "Szukaj..."
+      },
+      "searchResults": {
+        "errorMessage": "Wystąpił nieoczekiwany błąd podczas wyszukiwania",
+        "noResults": "Nie odnaleziono wyszukiwanej frazy",
+        "resultsHeader": "Wyniki wyszukiwania frazy \"{{phrase}}\"",
+        "versionString": "Wersja {{versionString}}"
+      }
+    },
     "validators": {
       "required": "To pole jest wymagane",
       "maxlength": "To pole nie może mieć więcej niż {{requiredLength}} znaków",

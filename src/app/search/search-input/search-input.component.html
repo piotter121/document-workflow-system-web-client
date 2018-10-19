@@ -1,0 +1,14 @@
+<form (submit)="search()">
+  <div class="form-group">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="{{'dws.search.searchInput.inputPlaceholder' | translate}}"
+             [formControl]="searchInput">
+
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

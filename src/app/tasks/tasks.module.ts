@@ -8,13 +8,15 @@ import {SharedModule} from "../shared/shared.module";
 import {FilesListComponent} from './files-list/files-list.component';
 import {ParticipantsListComponent} from './participants-list/participants-list.component';
 import {FilesModule} from "../files/files.module";
-import { AddParticipantComponent } from './add-participant/add-participant.component';
+import {AddParticipantComponent} from './add-participant/add-participant.component';
+import {SearchModule} from "../search/search.module";
 
 @NgModule({
   imports: [
     SharedModule,
     TasksRoutingModule,
-    FilesModule
+    FilesModule,
+    SearchModule
   ],
   declarations: [
     TaskDetailsComponent,

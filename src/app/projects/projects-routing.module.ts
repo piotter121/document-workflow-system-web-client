@@ -4,6 +4,7 @@ import {AllProjectsComponent} from "./all-projects/all-projects.component";
 import {ProjectDetailsComponent} from "./project-details/project-details.component";
 import {AuthGuardService} from "../auth/auth-guard.service";
 import {AddProjectComponent} from "./add-project/add-project.component";
+import {SearchResultsComponent} from "../search/search-results/search-results.component";
 
 const projectsRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ const projectsRoutes: Routes = [
   {
     path: 'projects/:projectId',
     component: ProjectDetailsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'projects/:projectId/search',
+    component: SearchResultsComponent,
     canActivate: [AuthGuardService]
   },
   {

@@ -35,3 +35,7 @@ textarea.ng-invalid.ng-touched, textarea.ng-invalid.ng-dirty {
 .btn-danger {
   background-color: #bf6360;
 }
+
+.hlt1 {
+  text-decoration: underline;
+}

@@ -7,12 +7,14 @@ import {ProjectsRoutingModule} from "./projects-routing.module";
 import {ProjectsService} from "./projects.service";
 import {TasksModule} from "../tasks/tasks.module";
 import {SharedModule} from "../shared/shared.module";
+import {SearchModule} from "../search/search.module";
 
 @NgModule({
   imports: [
     SharedModule,
     ProjectsRoutingModule,
-    TasksModule
+    TasksModule,
+    SearchModule
   ],
   declarations: [
     AllProjectsComponent,
