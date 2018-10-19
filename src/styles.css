@@ -4,14 +4,10 @@
 @import "~ngx-toastr/toastr.css";
 
 body {
-  background-color: #f1f1f140;
+  background-color: #fff;
 }
 [disabled] {
   cursor: not-allowed;
-}
-
-.card {
-  box-shadow: 0 2px 2px 0 #555;
 }
 
 .card-header > a {

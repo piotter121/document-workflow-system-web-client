@@ -3,11 +3,13 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
+import {easeInEaseOutAnimation} from "../../animations";
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [easeInEaseOutAnimation]
 })
 export class LoginComponent implements OnInit {
 
