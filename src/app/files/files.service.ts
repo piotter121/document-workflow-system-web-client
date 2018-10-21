@@ -10,7 +10,9 @@ export class FilesService {
   }
 
   addFileToTask(projectId: string, taskId: string, formData: FormData): Observable<string> {
-    return this.http.post<string>(`/api/projects/${projectId}/tasks/${taskId}/files`, formData);
+    return this.http.post(`/api/projects/${projectId}/tasks/${taskId}/files`, formData, {
+      responseType: 'text'
+    });
   }
 
   getFileMetadata(projectId: string, taskId: string, fileId: string): Observable<FileMetadata> {

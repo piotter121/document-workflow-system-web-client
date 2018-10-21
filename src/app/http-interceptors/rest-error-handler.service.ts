@@ -7,6 +7,7 @@ import {ErrorMessage} from '../shared/error-message';
 import {catchError} from 'rxjs/operators';
 import {ValidationError} from '../shared/validation-error';
 import {FieldError} from '../shared/field-error';
+import {ToastNotificationService} from "../shared/toast-notification.service";
 
 @Injectable()
 export class RestErrorHandlerService implements HttpInterceptor {
@@ -14,7 +15,8 @@ export class RestErrorHandlerService implements HttpInterceptor {
   private apiRegexp: RegExp = /(\/auth|\/api)\/*./;
 
   constructor(private translate: TranslateService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              private toastNotification: ToastNotificationService) {
   }
 
   handle(errorResponse: HttpErrorResponse) {
@@ -44,8 +46,11 @@ export class RestErrorHandlerService implements HttpInterceptor {
 
   private defaultHandle(errorResponse: HttpErrorResponse) {
     const errorMessage: ErrorMessage = errorResponse.error;
-    this.translate.get(`dws.httpErrors.${errorMessage.errorCode}`, errorMessage.params)
-      .subscribe((translation: string) => this.toastr.error(translation));
+    if (errorMessage.errorCode) {
+      this.toastNotification.error(`dws.httpErrors.${errorMessage.errorCode}`, errorMessage.params);
+    } else {
+      this.toastNotification.error('dws.httpErrors.MissingErrorCode');
+    }
   }
 
   private handleInternalServerError(errorResponse: HttpErrorResponse) {

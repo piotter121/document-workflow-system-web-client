@@ -13,7 +13,8 @@
         "message": {
           "notCorrectContentType": "Niepoprawny typ zawartości pliku"
         }
-      }
+      },
+      "MissingErrorCode": "Wystąpił nierozpoznany błąd"
     },
     "project": {
       "header": "Projekty",
