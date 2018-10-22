@@ -24,6 +24,9 @@ export class RestErrorHandlerService implements HttpInterceptor {
       case 400:
         this.handleBadRequestResponse(errorResponse);
         break;
+      case 404:
+        this.showMessage('dws.httpErrors.NotFoundError');
+        break;
       case 500:
         this.handleInternalServerError(errorResponse);
         break;
@@ -68,5 +71,9 @@ export class RestErrorHandlerService implements HttpInterceptor {
       }));
     else
       return next.handle(req);
+  }
+
+  private showMessage(messageCode: string) {
+    this.toastNotification.error(messageCode);
   }
 }
