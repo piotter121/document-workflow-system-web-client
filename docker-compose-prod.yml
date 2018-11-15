@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  dws-web-client:
+    container_name: dws-web-client
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+      cache_from:
+        - node:10.9
+        - nginx:1.15-alpine
+    ports:
+      - 80:80
