@@ -6,21 +6,18 @@
 FROM node:10.9 as builder
 
 # set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
-
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+RUN mkdir -p /usr/src/dws-web-client
+WORKDIR /usr/src/dws-web-client
 
 # install and cache app dependencies
-COPY package.json /usr/src/app/package.json
+COPY package*.json /usr/src/dws-web-client/
 RUN npm install
 
 # add app
-COPY . /usr/src/app
+COPY . /usr/src/dws-web-client/
 
 # generate build
-RUN npm run build:prod
+RUN npm run-script build:prod
 
 ##################
 ### production ###
@@ -29,8 +26,14 @@ RUN npm run build:prod
 # base image
 FROM nginx:1.15-alpine
 
+# Removing nginx default page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copying nginx configuration.
+COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
 # copy artifact build from the 'build environment'
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+COPY --from=builder /usr/src/dws-web-client/dist /usr/share/nginx/html
 
 # expose port 80
 EXPOSE 80
