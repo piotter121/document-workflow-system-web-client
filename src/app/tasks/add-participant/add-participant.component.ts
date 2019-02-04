@@ -7,7 +7,7 @@ import {UserInfo} from '../../auth/user-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 
 @Component({
-  selector: 'add-participant',
+  selector: 'app-add-participant',
   templateUrl: './add-participant.component.html',
   styleUrls: ['./add-participant.component.css']
 })
@@ -18,7 +18,7 @@ export class AddParticipantComponent implements OnInit {
   @Output()
   taskChange: EventEmitter<TaskInfo> = new EventEmitter<TaskInfo>();
 
-  isCollapsed: boolean = true;
+  isCollapsed = true;
   addParticipantForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
@@ -39,8 +39,9 @@ export class AddParticipantComponent implements OnInit {
 
   private nonExistingParticipant(): ValidatorFn {
     return (control: AbstractControl) => {
-      if (!this.task.participants)
+      if (!this.task.participants) {
         return null;
+      }
       return this.task.participants
         .map(participant => participant.email)
         .includes(control.value) ?

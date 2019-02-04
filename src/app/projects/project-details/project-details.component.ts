@@ -7,11 +7,11 @@ import {ProjectInfo} from '../project-info';
 import {UserService} from '../../auth/user.service';
 import {UserInfo} from '../../auth/user-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'project-details',
+  selector: 'app-project-details',
   templateUrl: './project-details.component.html',
   styleUrls: ['./project-details.component.css'],
   animations: [

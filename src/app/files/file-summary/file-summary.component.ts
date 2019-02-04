@@ -3,7 +3,7 @@ import {FileMetadata} from '../file-metadata';
 import {DatePipe} from '@angular/common';
 
 @Component({
-  selector: 'file-summary',
+  selector: 'app-file-summary',
   templateUrl: './file-summary.component.html',
   styleUrls: ['./file-summary.component.css']
 })

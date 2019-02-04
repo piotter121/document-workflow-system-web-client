@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
 
 @Component({
-  selector: 'invalid-feedback',
+  selector: 'app-invalid-feedback',
   templateUrl: './invalid-feedback.component.html',
   styleUrls: ['./invalid-feedback.component.css']
 })

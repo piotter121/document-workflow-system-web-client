@@ -9,7 +9,7 @@
           </label>
           <div class="col-md-5">
             <input id="name" type="text" class="form-control" formControlName="name" required>
-            <invalid-feedback [control]="name"></invalid-feedback>
+            <app-invalid-feedback [control]="name"></app-invalid-feedback>
           </div>
         </div>
 
@@ -19,7 +19,7 @@
           </label>
           <div class="col-md-5">
             <textarea id="description" class="form-control" formControlName="description"></textarea>
-            <invalid-feedback [control]="description"></invalid-feedback>
+            <app-invalid-feedback [control]="description"></app-invalid-feedback>
           </div>
         </div>
 
@@ -30,7 +30,7 @@
           <div class="col-md-5">
             <input id="administratorEmail" type="email" class="form-control"
                    formControlName="administratorEmail" required>
-            <invalid-feedback [control]="administratorEmail"></invalid-feedback>
+            <app-invalid-feedback [control]="administratorEmail"></app-invalid-feedback>
           </div>
         </div>
 

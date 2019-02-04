@@ -3,7 +3,7 @@ import {TaskSummary} from '../task-summary';
 import {DatePipe} from '@angular/common';
 
 @Component({
-  selector: 'task-summary',
+  selector: 'app-task-summary',
   templateUrl: './task-summary.component.html',
   styleUrls: ['./task-summary.component.css']
 })

@@ -12,7 +12,7 @@
 
 <div class="row">
   <div class="offset-2 col-8" *ngIf="isLoading; else notLoading">
-    <loading-spinner></loading-spinner>
+    <app-loading-spinner></app-loading-spinner>
   </div>
 
   <ng-template #notLoading>
@@ -21,11 +21,11 @@
     <ng-template #showProjects>
       <div class="col-md-12">
         <div class="text-center">
-          <h3 translate>dws.project.all.header</h3>
+          <h3 translate="dws.project.all.header"></h3>
         </div>
         <div class="row">
           <div @easeInEaseOut *ngFor="let project of projects; trackBy: project?.id" class="col-md-4">
-            <project-summary [project]="project"></project-summary>
+            <app-project-summary [project]="project"></app-project-summary>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import {AuthGuardService} from '../auth/auth-guard.service';
 import {AddVersionComponent} from './add-version/add-version.component';
 import {VersionDetailsComponent} from './version-details/version-details.component';
 
-const pathBase: string = 'projects/:projectId/tasks/:taskId/files/:fileId/versions';
+const pathBase = 'projects/:projectId/tasks/:taskId/files/:fileId/versions';
 
 const versionsRoutes: Routes = [
   {

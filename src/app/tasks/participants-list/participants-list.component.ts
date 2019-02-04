@@ -6,7 +6,7 @@ import {TasksService} from '../tasks.service';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 
 @Component({
-  selector: 'participants-list',
+  selector: 'app-participants-list',
   templateUrl: './participants-list.component.html',
   styleUrls: ['./participants-list.component.css']
 })

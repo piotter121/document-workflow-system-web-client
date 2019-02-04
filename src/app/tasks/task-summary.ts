@@ -1,4 +1,4 @@
-import {FileSummary} from "../files/file-summary";
+import {FileSummary} from '../files/file-summary';
 
 export interface TaskSummary {
   id: string;

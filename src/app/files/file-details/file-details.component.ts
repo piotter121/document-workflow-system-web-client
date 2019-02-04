@@ -10,11 +10,11 @@ import {Observable, throwError} from 'rxjs';
 import {VersionInfo} from '../../versions/version-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 import {VersionsService} from '../../versions/versions.service';
-import {RouteComponent} from "../../shared/route-component";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'file-details',
+  selector: 'app-file-details',
   templateUrl: './file-details.component.html',
   styleUrls: ['./file-details.component.css'],
   animations: [easeInEaseOutAnimation]

@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {ProjectSummary} from "./project-summary";
-import {NewProject} from "./new-project";
-import {ProjectInfo} from "./project-info";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {ProjectSummary} from './project-summary';
+import {NewProject} from './new-project';
+import {ProjectInfo} from './project-info';
 
 @Injectable()
 export class ProjectsService {

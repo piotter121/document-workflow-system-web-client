@@ -6,10 +6,10 @@ import {map} from 'rxjs/operators';
 import {NewTask} from '../new-task';
 import {AppValidatorsService} from '../../shared/app-validators.service';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
+import {RouteComponent} from '../../shared/route-component';
 
 @Component({
-  selector: 'add-task',
+  selector: 'app-add-task',
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css']
 })
@@ -53,7 +53,7 @@ export class AddTaskComponent implements OnInit, RouteComponent {
   }
 
   createTask() {
-    let newTask: NewTask = {
+    const newTask: NewTask = {
       name: this.name.value,
       administratorEmail: this.administratorEmail.value,
       description: this.description.value

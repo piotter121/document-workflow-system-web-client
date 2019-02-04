@@ -4,13 +4,13 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {AppValidatorsService} from '../../shared/app-validators.service';
 import {VersionsService} from '../versions.service';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
-import {map, switchMap} from "rxjs/operators";
-import {ContentType, FilesService} from "../../files/files.service";
-import {Observable} from "rxjs";
+import {RouteComponent} from '../../shared/route-component';
+import {map, switchMap} from 'rxjs/operators';
+import {ContentType, FilesService} from '../../files/files.service';
+import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'add-version',
+  selector: 'app-add-version',
   templateUrl: './add-version.component.html',
   styleUrls: ['./add-version.component.css']
 })

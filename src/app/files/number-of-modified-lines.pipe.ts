@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {VersionInfo} from "../versions/version-info";
-import {DifferenceType} from "../versions/difference-type.enum";
+import {VersionInfo} from '../versions/version-info';
+import {DifferenceType} from '../versions/difference-type.enum';
 
 @Pipe({
   name: 'numberOfModifiedLines'

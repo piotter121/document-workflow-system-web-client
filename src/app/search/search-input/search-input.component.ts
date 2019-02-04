@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {FormControl} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'search-input',
+  selector: 'app-search-input',
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.css']
 })

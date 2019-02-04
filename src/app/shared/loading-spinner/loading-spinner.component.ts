@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'loading-spinner',
+  selector: 'app-loading-spinner',
   template: '<div class="loader"></div>',
   styleUrls: ['./loading-spinner.component.css']
 })

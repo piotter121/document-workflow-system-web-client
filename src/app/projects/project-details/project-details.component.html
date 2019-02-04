@@ -40,14 +40,14 @@
       </div>
       <div class="row">
         <div *ngFor="let task of project.tasks; trackBy: task?.id" class="col-md-6 mb-3">
-          <task-summary [task]="task"></task-summary>
+          <app-task-summary [task]="task"></app-task-summary>
         </div>
       </div>
     </ng-template>
   </div>
 
   <div class="col-md-4">
-    <search-input></search-input>
+    <app-search-input></app-search-input>
     <div class="card">
       <div class="card-header" translate>dws.project.details.card.header</div>
       <div class="list-group list-group-flush">
@@ -82,5 +82,5 @@
 </div>
 
 <ng-template #loadingSpinner>
-  <loading-spinner></loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 </ng-template>

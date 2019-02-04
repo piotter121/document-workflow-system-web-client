@@ -9,12 +9,12 @@
               <div class="form-group">
                 <input class="form-control" placeholder="{{'dws.auth.login.emailPlaceholder' | translate}}"
                        type="text" formControlName="email" autocomplete="username">
-                <invalid-feedback [control]="email"></invalid-feedback>
+                <app-invalid-feedback [control]="email"></app-invalid-feedback>
               </div>
               <div class="form-group">
                 <input class="form-control" placeholder="{{'dws.auth.login.passwordPlaceholder' | translate}}"
                        type="password" formControlName="password" autocomplete="current-password">
-                <invalid-feedback [control]="password"></invalid-feedback>
+                <app-invalid-feedback [control]="password"></app-invalid-feedback>
               </div>
               <div class="form-group">
                 <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid" type="submit">

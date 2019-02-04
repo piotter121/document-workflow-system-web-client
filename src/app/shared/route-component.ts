@@ -1,4 +1,4 @@
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 export interface RouteComponent {
   readonly route: ActivatedRoute;

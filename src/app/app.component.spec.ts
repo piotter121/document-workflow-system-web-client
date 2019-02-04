@@ -13,6 +13,7 @@ class NavbarStubComponent {
 }
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'router-outlet',
   template: ''
 })

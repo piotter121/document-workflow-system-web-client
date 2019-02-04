@@ -6,24 +6,40 @@ import {catchError, switchMap} from 'rxjs/operators';
 import {DiffData, VersionsService} from '../versions.service';
 import {DifferenceType} from '../difference-type.enum';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'version-details',
+  selector: 'app-version-details',
   templateUrl: './version-details.component.html',
   styleUrls: ['./version-details.component.css'],
   animations: [easeInEaseOutAnimation]
 })
 export class VersionDetailsComponent implements OnInit, RouteComponent {
 
-  version$: Observable<VersionInfo>;
-  diffData$: Observable<DiffData>;
-
   constructor(public route: ActivatedRoute,
               private router: Router,
               private versionsService: VersionsService,
               private toastNotification: ToastNotificationService) {
+  }
+
+  version$: Observable<VersionInfo>;
+  diffData$: Observable<DiffData>;
+
+  static getClassForDifferenceType(differenceType: DifferenceType): string {
+    if (!differenceType) {
+      return '';
+    }
+    switch (differenceType) {
+      case DifferenceType.Insert:
+        return 'bg-success';
+      case DifferenceType.Delete:
+        return 'bg-danger';
+      case DifferenceType.Modification:
+        return 'bg-info';
+      default:
+        return '';
+    }
   }
 
   ngOnInit() {
@@ -55,21 +71,6 @@ export class VersionDetailsComponent implements OnInit, RouteComponent {
   getClassForDifferenceInOldContent(diffData: DiffData, i: number): string {
     const differenceType = this.getDiffTypeForOldVersion(diffData, i);
     return VersionDetailsComponent.getClassForDifferenceType(differenceType);
-  }
-
-  static getClassForDifferenceType(differenceType: DifferenceType): string {
-    if (!differenceType)
-      return '';
-    switch (differenceType) {
-      case DifferenceType.Insert:
-        return 'bg-success';
-      case DifferenceType.Delete:
-        return 'bg-danger';
-      case DifferenceType.Modification:
-        return 'bg-info';
-      default:
-        return '';
-    }
   }
 
   getDiffTypeForOldVersion(diffData: DiffData, i: number): DifferenceType {

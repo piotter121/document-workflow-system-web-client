@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProjectSummary} from "../project-summary";
-import {DatePipe} from "@angular/common";
+import {ProjectSummary} from '../project-summary';
+import {DatePipe} from '@angular/common';
 
 @Component({
-  selector: 'project-summary',
+  selector: 'app-project-summary',
   templateUrl: './project-summary.component.html',
   styleUrls: ['./project-summary.component.css']
 })

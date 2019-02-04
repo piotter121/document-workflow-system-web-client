@@ -7,7 +7,7 @@ import {ErrorMessage} from '../shared/error-message';
 import {catchError} from 'rxjs/operators';
 import {ValidationError} from '../shared/validation-error';
 import {FieldError} from '../shared/field-error';
-import {ToastNotificationService} from "../shared/toast-notification.service";
+import {ToastNotificationService} from '../shared/toast-notification.service';
 
 @Injectable()
 export class RestErrorHandlerService implements HttpInterceptor {
@@ -64,13 +64,14 @@ export class RestErrorHandlerService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.apiRegexp.test(req.url))
+    if (this.apiRegexp.test(req.url)) {
       return next.handle(req).pipe(catchError((err: HttpErrorResponse) => {
         this.handle(err);
         return throwError(err);
       }));
-    else
+    } else {
       return next.handle(req);
+    }
   }
 
   private showMessage(messageCode: string) {

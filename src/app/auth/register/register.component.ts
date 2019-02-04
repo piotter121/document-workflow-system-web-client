@@ -1,18 +1,39 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../auth.service';
-import {Router} from '@angular/router';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AppValidatorsService} from '../../shared/app-validators.service';
-import {ToastNotificationService} from '../../shared/toast-notification.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AppValidatorsService } from '../../shared/app-validators.service';
+import { ToastNotificationService } from '../../shared/toast-notification.service';
 
 @Component({
-  selector: 'register',
+  selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
 
   newUser: FormGroup;
+
+  static MatchPassword(abstractControl: AbstractControl) {
+    const password: AbstractControl = abstractControl.get('password');
+    const passwordValue: string = password.value;
+    const passwordRepeated: AbstractControl = abstractControl.get('passwordRepeated');
+    const passwordRepeatedValue: string = passwordRepeated.value;
+    const notMatched: boolean = passwordValue && passwordRepeatedValue
+      && passwordValue !== passwordRepeatedValue;
+    const passwordRepeatedErrors = passwordRepeated.errors;
+    if (notMatched) {
+      if (passwordRepeatedErrors) {
+        passwordRepeated.errors['MatchPassword'] = true;
+      } else {
+        passwordRepeated.setErrors({
+          'MatchPassword': true
+        });
+      }
+    } else if (passwordRepeatedErrors) {
+      delete passwordRepeated.errors['MatchPassword'];
+    }
+  }
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -63,26 +84,5 @@ export class RegisterComponent implements OnInit {
       () => this.router.navigate(['/login']),
       () => this.toastNotification.error('dws.auth.register.failure')
     );
-  }
-
-  static MatchPassword(abstractControl: AbstractControl) {
-    let password: AbstractControl = abstractControl.get('password');
-    let passwordValue: string = password.value;
-    let passwordRepeated: AbstractControl = abstractControl.get('passwordRepeated');
-    let passwordRepeatedValue: string = passwordRepeated.value;
-    let notMatched: boolean = passwordValue && passwordRepeatedValue
-      && passwordValue != passwordRepeatedValue;
-    let passwordRepeatedErrors = passwordRepeated.errors;
-    if (notMatched) {
-      if (passwordRepeatedErrors) {
-        passwordRepeated.errors['MatchPassword'] = true;
-      } else {
-        passwordRepeated.setErrors({
-          'MatchPassword': true
-        });
-      }
-    } else if (passwordRepeatedErrors) {
-      delete passwordRepeated.errors['MatchPassword'];
-    }
   }
 }

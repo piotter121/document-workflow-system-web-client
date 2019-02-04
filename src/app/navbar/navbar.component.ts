@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   @Input() activatedRoute: ActivatedRoute;
 
   loggedIn$: Observable<UserInfo>;
-  isCollapsed: boolean = false;
+  isCollapsed = false;
 
   constructor(private authService: AuthService,
               private router: Router,

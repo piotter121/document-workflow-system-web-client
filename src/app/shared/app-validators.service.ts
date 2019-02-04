@@ -19,7 +19,7 @@ export class AppValidatorsService {
         catchError(() => of(false)),
         map(exists => exists ? {'versionStringExists': true} : null)
       );
-    }
+    };
   }
 
   nonExistingTaskNameInProject(projectId: string): AsyncValidatorFn {
@@ -50,7 +50,7 @@ export class AppValidatorsService {
 
   existingUserEmail(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
-      let value: string = control.value;
+      const value: string = control.value;
       return this.checkIfUserExists(value)
         .pipe(
           catchError(() => of(true)),
@@ -61,7 +61,7 @@ export class AppValidatorsService {
 
   nonExistingUserEmail(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {
-      let value: string = control.value;
+      const value: string = control.value;
       return this.checkIfUserExists(value)
         .pipe(
           catchError(() => of(false)),

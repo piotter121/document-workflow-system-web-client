@@ -3,10 +3,10 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {ProjectsService} from '../projects.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
+import {RouteComponent} from '../../shared/route-component';
 
 @Component({
-  selector: 'add-project',
+  selector: 'app-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.css']
 })

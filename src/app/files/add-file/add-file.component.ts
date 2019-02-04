@@ -3,10 +3,10 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FilesService} from '../files.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
+import {RouteComponent} from '../../shared/route-component';
 
 @Component({
-  selector: 'add-file',
+  selector: 'app-add-file',
   templateUrl: './add-file.component.html',
   styleUrls: ['./add-file.component.css']
 })

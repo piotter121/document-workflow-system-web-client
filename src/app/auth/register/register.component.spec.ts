@@ -10,7 +10,7 @@ import {ToastNotificationService} from '../../shared/toast-notification.service'
 import {of} from 'rxjs';
 
 @Component({
-  selector: 'invalid-feedback',
+  selector: 'app-invalid-feedback',
   template: ''
 })
 class InvalidFeedbackStubComponent {

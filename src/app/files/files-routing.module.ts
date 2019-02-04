@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
-import {AddFileComponent} from "./add-file/add-file.component";
-import {AuthGuardService} from "../auth/auth-guard.service";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AddFileComponent} from './add-file/add-file.component';
+import {AuthGuardService} from '../auth/auth-guard.service';
 import {FileDetailsComponent} from './file-details/file-details.component';
 
 const filesRoutes: Routes = [

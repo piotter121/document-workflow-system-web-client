@@ -8,7 +8,7 @@
           <label class="col-md-2 col-form-label" for="name" translate>dws.files.add.labels.name</label>
           <div class="col-md-5">
             <input id="name" type="text" class="form-control" formControlName="name" required>
-            <invalid-feedback [control]="name"></invalid-feedback>
+            <app-invalid-feedback [control]="name"></app-invalid-feedback>
           </div>
         </div>
 
@@ -16,7 +16,7 @@
           <label class="col-md-2 col-form-label" for="description" translate>dws.files.add.labels.description</label>
           <div class="col-md-5">
             <textarea id="description" class="form-control" formControlName="description"></textarea>
-            <invalid-feedback [control]="description"></invalid-feedback>
+            <app-invalid-feedback [control]="description"></app-invalid-feedback>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
           </label>
           <div class="col-md-5">
             <input id="versionString" type="text" class="form-control" formControlName="versionString" required>
-            <invalid-feedback [control]="versionString"></invalid-feedback>
+            <app-invalid-feedback [control]="versionString"></app-invalid-feedback>
           </div>
         </div>
 

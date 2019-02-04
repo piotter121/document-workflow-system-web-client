@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../auth.service';
-import {Router} from '@angular/router';
-import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {easeInEaseOutAnimation} from "../../animations";
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { ToastNotificationService } from '../../shared/toast-notification.service';
+import { easeInEaseOutAnimation } from '../../animations';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [easeInEaseOutAnimation]

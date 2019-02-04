@@ -7,11 +7,11 @@ import {TasksService} from '../tasks.service';
 import {UserService} from '../../auth/user.service';
 import {UserInfo} from '../../auth/user-info';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'task-details',
+  selector: 'app-task-details',
   templateUrl: './task-details.component.html',
   styleUrls: ['./task-details.component.css'],
   animations: [easeInEaseOutAnimation]

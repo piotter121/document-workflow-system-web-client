@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {RouteComponent} from "../../shared/route-component";
-import {ActivatedRoute, ParamMap} from "@angular/router";
-import {catchError, map, switchMap} from "rxjs/operators";
-import {combineLatest, Observable, of} from "rxjs";
-import {FileSearchService, SearchResultEntry} from "../file-search.service";
-import {ToastNotificationService} from "../../shared/toast-notification.service";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {catchError, map, switchMap} from 'rxjs/operators';
+import {combineLatest, Observable, of} from 'rxjs';
+import {FileSearchService, SearchResultEntry} from '../file-search.service';
+import {ToastNotificationService} from '../../shared/toast-notification.service';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'search-results',
+  selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css'],
   animations: [easeInEaseOutAnimation]

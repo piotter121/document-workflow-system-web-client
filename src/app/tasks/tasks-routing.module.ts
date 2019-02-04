@@ -1,9 +1,9 @@
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
-import {AddTaskComponent} from "./add-task/add-task.component";
-import {AuthGuardService} from "../auth/auth-guard.service";
-import {TaskDetailsComponent} from "./task-details/task-details.component";
-import {SearchResultsComponent} from "../search/search-results/search-results.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AddTaskComponent} from './add-task/add-task.component';
+import {AuthGuardService} from '../auth/auth-guard.service';
+import {TaskDetailsComponent} from './task-details/task-details.component';
+import {SearchResultsComponent} from '../search/search-results/search-results.component';
 
 const tasksRoutes: Routes = [
   {

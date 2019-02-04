@@ -3,11 +3,11 @@ import {ProjectSummary} from '../project-summary';
 import {ProjectsService} from '../projects.service';
 import {ActivatedRoute} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from "../../shared/route-component";
-import {easeInEaseOutAnimation} from "../../animations";
+import {RouteComponent} from '../../shared/route-component';
+import {easeInEaseOutAnimation} from '../../animations';
 
 @Component({
-  selector: 'all-projects',
+  selector: 'app-all-projects',
   templateUrl: './all-projects.component.html',
   styleUrls: ['./all-projects.component.css'],
   animations: [

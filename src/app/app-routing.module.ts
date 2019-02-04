@@ -1,6 +1,6 @@
-import {RouterModule, Routes} from "@angular/router";
-import {NgModule} from "@angular/core";
-import {environment} from "src/environments/environment";
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {environment} from 'src/environments/environment';
 
 const appRoutes: Routes = [
   {

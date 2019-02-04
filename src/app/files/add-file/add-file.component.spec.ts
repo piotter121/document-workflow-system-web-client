@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ToastNotificationService} from '../../shared/toast-notification.service';
 
 @Component({
-  selector: 'invalid-feedback',
+  selector: 'app-invalid-feedback',
   template: ''
 })
 class InvalidFeedbackStubComponent {

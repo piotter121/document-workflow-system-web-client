@@ -1,3 +1,3 @@
 export enum DifferenceType {
-  Insert = "INSERT", Delete = "DELETE", Modification = "MODIFICATION"
+  Insert = 'INSERT', Delete = 'DELETE', Modification = 'MODIFICATION'
 }

@@ -5,7 +5,7 @@
         <!--suppress HtmlUnknownAttribute -->
         <ng-template ngbTabContent>
           <div @easeInEaseOut class="mt-2">
-            <files-list [task]="task"></files-list>
+            <app-files-list [task]="task"></app-files-list>
           </div>
         </ng-template>
       </ngb-tab>
@@ -14,7 +14,7 @@
         <!--suppress HtmlUnknownAttribute -->
         <ng-template ngbTabContent>
           <div @easeInEaseOut class="mt-2">
-            <participants-list [task]="task"></participants-list>
+            <app-participants-list [task]="task"></app-participants-list>
           </div>
         </ng-template>
       </ngb-tab>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="col-md-4">
-    <search-input></search-input>
+    <app-search-input></app-search-input>
     <div class="card">
       <div class="card-header" translate>dws.task.details.card.header</div>
       <div class="list-group list-group-flush">
@@ -70,5 +70,5 @@
 </div>
 
 <ng-template #loadingSpinner>
-  <loading-spinner></loading-spinner>
+  <app-loading-spinner></app-loading-spinner>
 </ng-template>

@@ -21,7 +21,7 @@
           <div class="col-5">
             <input id="versionString" type="text" class="form-control" formControlName="versionString" required>
 
-            <invalid-feedback [control]="versionString"></invalid-feedback>
+            <app-invalid-feedback [control]="versionString"></app-invalid-feedback>
           </div>
         </div>
 
@@ -31,7 +31,7 @@
           <div class="col-5">
             <textarea id="message" class="form-control" formControlName="message" required></textarea>
 
-            <invalid-feedback [control]="message"></invalid-feedback>
+            <app-invalid-feedback [control]="message"></app-invalid-feedback>
           </div>
         </div>
 

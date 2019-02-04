@@ -1,6 +1,6 @@
-import {UserInfo} from "../auth/user-info";
-import {FileSummary} from "../files/file-summary";
-import {FileMetadata} from "../files/file-metadata";
+import {UserInfo} from '../auth/user-info';
+import {FileSummary} from '../files/file-summary';
+import {FileMetadata} from '../files/file-metadata';
 
 export interface TaskInfo {
   id: string;
