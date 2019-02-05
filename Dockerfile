@@ -3,7 +3,7 @@
 #########################
 
 # base image
-FROM node:10.9 as builder
+FROM node:dubnium as builder
 
 # set working directory
 RUN mkdir -p /usr/src/dws-web-client
