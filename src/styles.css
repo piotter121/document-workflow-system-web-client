@@ -1,37 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.min.css";
-@import "~ngx-toastr/toastr.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
 
 body {
-  background-color: #fff;
-}
-[disabled] {
-  cursor: not-allowed;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.card-header > a {
-  color: inherit;
-}
-
-.card-header > a:hover {
-  text-decoration: inherit;
-}
-
-/*noinspection CssUnusedSymbol*/
-input.ng-invalid.ng-touched, input.ng-invalid.ng-dirty,
-textarea.ng-invalid.ng-touched, textarea.ng-invalid.ng-dirty {
-  border-color: #dc3545;
-}
-
-.btn-success {
-  background-color: #689c68;
-}
-
-.btn-danger {
-  background-color: #bf6360;
-}
-
-.hlt1 {
-  text-decoration: underline;
+app-root {
+  display: block;
+  width: 100vw;
+  height: 100vh;
 }

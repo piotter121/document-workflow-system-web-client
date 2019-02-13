@@ -1,67 +1,43 @@
-<div class="row">
-  <div class="col-md-12">
-    <form [formGroup]="newUser" (ngSubmit)="register()" novalidate>
-      <fieldset>
-        <legend translate>
-          dws.auth.register.legend
-        </legend>
-        <div class="form-group row">
-          <label class="col-md-2 col-form-label" for="email" translate>
-            dws.auth.register.emailLabel
-          </label>
-          <div class="col-md-5">
-            <input id="email" type="email" class="form-control" formControlName="email">
-            <app-invalid-feedback [control]="email"></app-invalid-feedback>
-          </div>
+<form role="form" [formGroup]="newUser" (ngSubmit)="register()" novalidate>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxFlexOffset="50px">
+      <mat-card-title>Register</mat-card-title>
+      <mat-card-subtitle>Please, fill this form to register new user</mat-card-subtitle>
+
+      <mat-card-content fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input type="email" matInput formControlName="email" required>
+        </mat-form-field>
+
+        <div fxLayout="row">
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>First name</mat-label>
+            <input type="text" matInput formControlName="firstName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Last name</mat-label>
+            <input type="text" matInput formControlName="lastName" required>
+          </mat-form-field>
         </div>
-        <div class="form-group row">
-          <label class="col-md-2 col-form-label" for="firstName" translate>
-            dws.auth.register.firstNameLabel
-          </label>
-          <div class="col-md-5">
-            <input id="firstName" type="text" class="form-control" formControlName="firstName">
-            <app-invalid-feedback [control]="firstName"></app-invalid-feedback>
-          </div>
+
+        <div fxLayout="row">
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" fxFlex>
+            <mat-label>Repeated password</mat-label>
+            <input type="password" matInput formControlName="passwordRepeated" required>
+          </mat-form-field>
         </div>
-        <div class="form-group row">
-          <label class="col-md-2 col-form-label" for="lastName" translate>
-            dws.auth.register.lastNameLabel
-          </label>
-          <div class="col-md-5">
-            <input id="lastName" type="text" class="form-control" formControlName="lastName">
-            <app-invalid-feedback [control]="lastName"></app-invalid-feedback>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-md-2 col-form-label" for="password" translate>
-            dws.auth.register.passwordLabel
-          </label>
-          <div class="col-md-5">
-            <input id="password" type="password" class="form-control" formControlName="password">
-            <app-invalid-feedback [control]="password"></app-invalid-feedback>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-md-2 col-form-label" for="passwordRepeated" translate>
-            dws.auth.register.passwordRepeatedLabel
-          </label>
-          <div class="col-md-5">
-            <input id="passwordRepeated" type="password" class="form-control"
-                   formControlName="passwordRepeated">
-            <app-invalid-feedback [control]="passwordRepeated"></app-invalid-feedback>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="offset-2 col-5">
-            <button type="submit" class="btn btn-primary mr-1" [disabled]="newUser.invalid || newUser.pending">
-              <i class="fa fa-check" aria-hidden="true"></i> {{'dws.auth.register.submitButton' | translate}}
-            </button>
-            <a class="btn btn-outline-secondary" routerLink="/login" translate>
-              dws.auth.register.back
-            </a>
-          </div>
-        </div>
-      </fieldset>
-    </form>
+      </mat-card-content>
+
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center end" fxLayoutGap="10px">
+
+      </mat-card-actions>
+    </mat-card>
   </div>
-</div>
+</form>

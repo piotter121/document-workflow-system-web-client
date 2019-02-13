@@ -1,20 +1,22 @@
 import {Injectable} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {ToastrService} from 'ngx-toastr';
 
 @Injectable()
 export class ToastNotificationService {
 
-  constructor(private translate: TranslateService,
-              private toastr: ToastrService) { }
+  constructor(private translate: TranslateService) { }
 
   success(messageCode: string, params?: Object) {
     this.translate.get(messageCode, params)
-      .subscribe(translation => this.toastr.success(translation));
+      .subscribe(translation => {
+        // TODO handle this
+      });
   }
 
   error(messageCode: string, params?: Object) {
     this.translate.get(messageCode, params)
-      .subscribe(translation => this.toastr.error(translation));
+      .subscribe(translation => {
+        // TODO handle this
+      });
   }
 }

@@ -1,13 +1,12 @@
-import {Injectable} from '@angular/core';
-import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {TranslateService} from '@ngx-translate/core';
-import {ToastrService} from 'ngx-toastr';
-import {ErrorMessage} from '../shared/error-message';
-import {catchError} from 'rxjs/operators';
-import {ValidationError} from '../shared/validation-error';
-import {FieldError} from '../shared/field-error';
-import {ToastNotificationService} from '../shared/toast-notification.service';
+import { Injectable } from '@angular/core';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { ErrorMessage } from '../shared/error-message';
+import { catchError } from 'rxjs/operators';
+import { ValidationError } from '../shared/validation-error';
+import { FieldError } from '../shared/field-error';
+import { ToastNotificationService } from '../shared/toast-notification.service';
 
 @Injectable()
 export class RestErrorHandlerService implements HttpInterceptor {
@@ -15,8 +14,7 @@ export class RestErrorHandlerService implements HttpInterceptor {
   private apiRegexp: RegExp = /(\/auth|\/api)\/*./;
 
   constructor(private translate: TranslateService,
-              private toastr: ToastrService,
-              private toastNotification: ToastNotificationService) {
+    private toastNotification: ToastNotificationService) {
   }
 
   handle(errorResponse: HttpErrorResponse) {
@@ -42,7 +40,7 @@ export class RestErrorHandlerService implements HttpInterceptor {
         const fieldTranslationCode = `dws.httpErrors.BadRequest.field.${fieldError.field}`;
         const messageTranslationCode = `dws.httpErrors.BadRequest.message.${fieldError.message}`;
         this.translate.get([fieldTranslationCode, messageTranslationCode])
-          .subscribe(translation => this.toastr.error(translation[messageTranslationCode], translation[fieldTranslationCode]));
+          .subscribe(translation => { });
       });
     }
   }
@@ -59,7 +57,7 @@ export class RestErrorHandlerService implements HttpInterceptor {
   private handleInternalServerError(errorResponse: HttpErrorResponse) {
     this.translate.get('dws.httpErrors.InternalServerError')
       .subscribe((translation: string) => {
-        this.toastr.error(`${errorResponse.name}: ${errorResponse.message}`, translation);
+        // TODO handle this
       });
   }
 

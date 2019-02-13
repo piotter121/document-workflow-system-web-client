@@ -1,9 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {FilesService} from '../files.service';
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import {ToastNotificationService} from '../../shared/toast-notification.service';
-import {RouteComponent} from '../../shared/route-component';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FilesService } from '../files.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ToastNotificationService } from '../../shared/toast-notification.service';
+import { RouteComponent } from '../../shared/route-component';
+
+const SUPPORTED_FILE_EXTENSIONS: string[] = [
+  '.xlsx', '.xls', '.ods', '.odt', '.doc', '.docx'
+];
+
+const SUPPORTED_FILE_MIME_TYPES: string[] = [
+  'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'application/vnd.oasis.opendocument.text', 'application/vnd.oasis.opendocument.spreadsheet'
+];
 
 @Component({
   selector: 'app-add-file',
@@ -17,12 +27,12 @@ export class AddFileComponent implements OnInit, RouteComponent {
 
   acceptedFileTypes = SUPPORTED_FILE_EXTENSIONS.concat(SUPPORTED_FILE_MIME_TYPES);
 
-  constructor(private formBuilder: FormBuilder,
-              private filesService: FilesService,
-              public route: ActivatedRoute,
-              private router: Router,
-              private toastNotification: ToastNotificationService) {
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private filesService: FilesService,
+    public route: ActivatedRoute,
+    private router: Router,
+    private toastNotification: ToastNotificationService) { }
 
   ngOnInit() {
     this.newFile = this.formBuilder.group({
@@ -60,13 +70,3 @@ export class AddFileComponent implements OnInit, RouteComponent {
       );
   }
 }
-
-const SUPPORTED_FILE_EXTENSIONS: string[] = [
-  '.xlsx', '.xls', '.ods', '.odt', '.doc', '.docx'
-];
-
-const SUPPORTED_FILE_MIME_TYPES: string[] = [
-  'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  'application/vnd.oasis.opendocument.text', 'application/vnd.oasis.opendocument.spreadsheet'
-];

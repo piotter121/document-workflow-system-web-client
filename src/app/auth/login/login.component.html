@@ -1,33 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="offset-md-4 col-md-4">
-      <div class="card" @easeInEaseOut>
-        <h4 class="card-header" translate>dws.auth.login.header</h4>
-        <div class="card-body">
-          <form role="form" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="on">
-            <fieldset>
-              <div class="form-group">
-                <input class="form-control" placeholder="{{'dws.auth.login.emailPlaceholder' | translate}}"
-                       type="text" formControlName="email" autocomplete="username">
-                <app-invalid-feedback [control]="email"></app-invalid-feedback>
-              </div>
-              <div class="form-group">
-                <input class="form-control" placeholder="{{'dws.auth.login.passwordPlaceholder' | translate}}"
-                       type="password" formControlName="password" autocomplete="current-password">
-                <app-invalid-feedback [control]="password"></app-invalid-feedback>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-primary btn-block" [disabled]="!loginForm.valid" type="submit">
-                  <i class="fa fa-sign-in" aria-hidden="true"></i> {{'dws.auth.login.loginBtn' | translate}}
-                </button>
-              </div>
-            </fieldset>
-          </form>
-          <a routerLink="/register" class="btn btn-info btn-block">
-            <i class="fa fa-check" aria-hidden="true"></i> {{'dws.auth.login.signInBtn' | translate}}
-          </a>
-        </div>
-      </div>
-    </div>
+<form role="form" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="on">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card fxFlexOffset="50px">
+      <mat-card-title>Welcome</mat-card-title>
+      <mat-card-subtitle>Please, log in to application</mat-card-subtitle>
+
+      <mat-card-content fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" autocomplete="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" autocomplete="current-password" required>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
+        <a mat-stroked-button color="primary" routerLink="/register">Sign up</a>
+        <button type="submit" mat-flat-button color="primary">Sign in</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-</div>
+</form>

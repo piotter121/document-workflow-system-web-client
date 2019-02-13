@@ -35,12 +35,12 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  constructor(private authService: AuthService,
-              private router: Router,
-              private formBuilder: FormBuilder,
-              private appValidators: AppValidatorsService,
-              private toastNotification: ToastNotificationService) {
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private appValidators: AppValidatorsService,
+    private toastNotification: ToastNotificationService) { }
 
   ngOnInit() {
     this.newUser = this.formBuilder.group({
@@ -50,8 +50,8 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       passwordRepeated: ['', [Validators.required, Validators.minLength(6)]]
     }, {
-      validator: RegisterComponent.MatchPassword
-    });
+        validator: RegisterComponent.MatchPassword
+      });
   }
 
   get email() {

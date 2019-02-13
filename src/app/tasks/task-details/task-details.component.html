@@ -1,8 +1,7 @@
 <div @easeInEaseOut class="row" *ngIf="task$ | async as task; else loadingSpinner">
   <div class="col-md-8">
-    <ngb-tabset type="pills">
+    <!-- <ngb-tabset type="pills">
       <ngb-tab title="{{'dws.task.details.files.pillTitle' | translate}}">
-        <!--suppress HtmlUnknownAttribute -->
         <ng-template ngbTabContent>
           <div @easeInEaseOut class="mt-2">
             <app-files-list [task]="task"></app-files-list>
@@ -11,7 +10,6 @@
       </ngb-tab>
 
       <ngb-tab title="{{'dws.task.details.participants.pillTitle' | translate}}">
-        <!--suppress HtmlUnknownAttribute -->
         <ng-template ngbTabContent>
           <div @easeInEaseOut class="mt-2">
             <app-participants-list [task]="task"></app-participants-list>
@@ -21,7 +19,6 @@
 
       <ngb-tab *ngIf="currentUser.equals(task.projectAdministrator)"
                title="{{'dws.task.details.admin.pillTitle' | translate}}">
-        <!--suppress HtmlUnknownAttribute -->
         <ng-template ngbTabContent>
           <div @easeInEaseOut class="row mt-2">
             <div class="col-md-12">
@@ -36,7 +33,7 @@
           </div>
         </ng-template>
       </ngb-tab>
-    </ngb-tabset>
+    </ngb-tabset> -->
   </div>
 
   <div class="col-md-4">

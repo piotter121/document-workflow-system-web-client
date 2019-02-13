@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {AuthService} from '../auth/auth.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {UserInfo} from '../auth/user-info';
-import {UserService} from '../auth/user.service';
-import {Observable} from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserInfo } from '../auth/user-info';
+import { UserService } from '../auth/user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -12,28 +12,27 @@ import {Observable} from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() activatedRoute: ActivatedRoute;
+  @Input()
+  activatedRoute: ActivatedRoute;
 
   loggedIn$: Observable<UserInfo>;
   isCollapsed = false;
 
-  constructor(private authService: AuthService,
-              private router: Router,
-              private userService: UserService) {
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private userService: UserService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loggedIn$ = this.userService.currentUser$;
   }
 
-  logout() {
+  logout(): void {
     this.authService.logout();
-    // noinspection JSIgnoredPromiseFromCall
     this.router.navigate(['/login']);
   }
 
-  goBack() {
-    // noinspection JSIgnoredPromiseFromCall
+  goBack(): void {
     this.router.navigate(['../'], {
       relativeTo: this.activatedRoute
     });

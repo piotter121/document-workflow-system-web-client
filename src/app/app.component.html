@@ -1,5 +1,7 @@
-<app-navbar [activatedRoute]="routedComponent?.route" *ngIf="isLoggedIn$ | async"></app-navbar>
-<div class="container-fluid my-2">
-  <router-outlet (activate)="routedComponent = $event" (deactivate)="routedComponent = $event">
-  </router-outlet>
+<div fxLayout="column" class="app-root-container">
+  <app-navbar [activatedRoute]="routedComponent?.route"></app-navbar>
+  <div fxFlex class="page-content">
+    <router-outlet (activate)="routedComponent = $event" (deactivate)="routedComponent = $event">
+    </router-outlet>
+  </div>
 </div>

@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
-import {LoginComponent} from './login/login.component';
-import {RegisterComponent} from './register/register.component';
-import {AuthGuardService} from './auth-guard.service';
-import {AuthService} from './auth.service';
-import {JwtModule, JwtModuleOptions} from '@auth0/angular-jwt';
-import {AuthRoutingModule} from './auth-routing.module';
-import {UserService} from './user.service';
-import {SharedModule} from '../shared/shared.module';
+import { NgModule } from '@angular/core';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import { AuthRoutingModule } from './auth-routing.module';
+import { UserService } from './user.service';
+import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../material.module';
 
 export function getToken() {
   return localStorage.getItem('token');
@@ -25,7 +26,8 @@ export const jwtOptions: JwtModuleOptions = {
   imports: [
     SharedModule,
     JwtModule.forRoot(jwtOptions),
-    AuthRoutingModule
+    AuthRoutingModule,
+    MaterialModule
   ],
   declarations: [
     LoginComponent,
